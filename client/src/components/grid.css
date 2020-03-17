@@ -32,7 +32,7 @@ body {
 }
 nav {
 	grid-column: 1 / 13;
-	height: 40px;
+	height: 60px;
 	padding: 0 8px;
 	background-color: #0f0f0f;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
@@ -115,7 +115,7 @@ main .main-content h3 strong:hover {
 }
 footer {
 	grid-column: 1/13;
-	height: 40px;
+	height: 60px;
 	background-color: #0f0f0f;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
 	border-radius: 3px;
@@ -246,6 +246,9 @@ img {
 		z-index: -2;
 	}
 
+	main .main-content {
+		text-align: center;
+	}
 	main .main-content h1 {
 		font-size: 60px;
 		color: #7d5e2a;
@@ -261,5 +264,14 @@ img {
 	.card {
 		width: 100%;
 		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.container-main {
+		min-height: 80vh;
+	}
+	main .main-content h1 {
+		font-size: 40px;
 	}
 }
