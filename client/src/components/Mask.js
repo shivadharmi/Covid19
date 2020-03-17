@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Mask = () => {
-	return <main></main>;
+	return <main>will be live soon</main>;
 };
 
 export default Mask;
