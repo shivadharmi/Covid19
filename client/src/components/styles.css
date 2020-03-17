@@ -1,0 +1,147 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	list-style-type: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	padding-bottom: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #333;
+	background-color: #121212;
+	position: relative;
+}
+
+.navbar {
+	height: 40px;
+	width: 100%;
+	background-color: #1f1f1f;
+	color: #f5f5f5;
+	position: fixed;
+	z-index: 10;
+}
+
+.navbar-Brand {
+	font-size: 30px;
+	line-height: 40px;
+	position: absolute;
+	left: 40px;
+	display: inline-block;
+	color: #6200ee;
+}
+ul {
+	float: right;
+	margin-right: 80px;
+	transition: none;
+}
+
+.nav-link {
+	display: inline-block;
+	margin-left: 40px;
+}
+
+.nav-link a {
+	text-decoration: none;
+	color: #f5f5f5;
+	padding: 5px;
+	font-size: 20px;
+	text-transform: uppercase;
+	transition: a 0.5s;
+}
+
+.nav-link a:hover {
+	background-color: #6200ee;
+	color: #f4f4f4;
+}
+
+.checkbtn {
+	float: right;
+	display: none;
+}
+#check {
+	display: none;
+}
+
+.checkbtn i {
+	font-size: 20px;
+	line-height: 40px;
+}
+
+@media screen and (max-width: 991px) {
+	.navbar {
+		height: 30px;
+	}
+
+	.navbar-Brand {
+		font-size: 20px;
+		line-height: 30px;
+		left: 30px;
+	}
+	.nav-link {
+		margin-left: 30px;
+	}
+	.nav-link a {
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.navbar {
+		height: 30px;
+	}
+
+	.navbar-Brand {
+		font-size: 20px;
+		line-height: 30px;
+		left: 25px;
+	}
+
+	ul {
+		display: block;
+		background-color: #1f1f1f;
+		position: fixed;
+		left: 0;
+		top: -100vh;
+		width: 100%;
+		height: 100vh;
+		/* position: relative;
+		top: 30px;
+		left: 0; */
+		transform: none;
+		transition: all 0.5s;
+		z-index: -1;
+	}
+
+	.nav-link {
+		display: block;
+		text-align: center;
+		margin-bottom: 50px;
+	}
+	.nav-link a {
+		font-size: 15px;
+	}
+
+	.checkbtn {
+		display: block;
+		margin-right: 40px;
+	}
+
+	.checkbtn i {
+		line-height: 30px;
+		cursor: pointer;
+	}
+
+	#check:checked ~ ul {
+		top: 30px;
+	}
+}

@@ -1,0 +1,246 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	margin: auto;
+	min-height: 100vh;
+	padding-bottom: 5px;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #333;
+	background-color: #121212;
+}
+
+.container-main {
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	grid-row-gap: 20px;
+}
+nav {
+	grid-column: 1 / 13;
+	grid-row: 40px;
+	padding: 0 8px;
+	background-color: #0f0f0f;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
+	border-radius: 3px 3px 0 0;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	align-items: center;
+}
+#check {
+	display: none;
+}
+nav .nav-brand {
+	padding-left: 15px;
+	grid-column: 1/ 6;
+	color: #7d5e2a;
+	font-size: 30px;
+}
+nav ul {
+	grid-column: 6 / 13;
+}
+nav ul li {
+	display: inline;
+	margin-left: 60px;
+}
+
+nav ul li .nav-link {
+	color: #f5f5f5;
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 5px;
+	cursor: pointer;
+	font-weight: 500;
+}
+nav ul li .nav-link:hover {
+	background-color: #7d5e2a;
+	color: #000;
+	border-radius: 3px;
+}
+nav label {
+	display: none;
+}
+
+.checkbtn i {
+	font-size: 20px;
+	color: white;
+}
+
+main {
+	grid-column: 1/13;
+	grid-row: 2/10;
+	background-color: #0f0f0f;
+	margin: 0 10px;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+main .main-content {
+	text-align: center;
+	width: 80%;
+}
+main .main-content h1 {
+	font-size: 80px;
+	color: #7d5e2a;
+	text-transform: uppercase;
+}
+
+main .main-content h3 strong {
+	color: #7d5e2a;
+	cursor: pointer;
+	transition: all 0.5s;
+	margin-left: 3px;
+}
+main .main-content h3 strong:hover {
+	background-color: #7d5e2a;
+	color: #000;
+	padding: 5px;
+	border-radius: 3px;
+}
+footer {
+	grid-column: 1/13;
+	grid-row: 10/11;
+	background-color: #0f0f0f;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer p {
+	color: #f5f5f5;
+}
+footer p strong {
+	color: #7d5e2a;
+	margin-right: 3px;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+
+footer p strong:hover {
+	background-color: #7d5e2a;
+	color: #000;
+	border-radius: 3px;
+	padding: 5px;
+}
+.advices {
+	grid-column: 2/12;
+	grid-row: 2/10;
+	background-color: #0f0f0f;
+	margin: 0 10px;
+	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+	display: flex;
+	justify-content: space-around;
+	padding: 10px;
+}
+.advices div h3 {
+	flex: ;
+}
+.card {
+	width: 30%;
+}
+img {
+	width: 100%;
+}
+@media screen and (max-width: 768px) {
+	.container-main {
+		min-height: 100vh;
+		display: grid;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-rows: repeat(8, 1fr);
+		grid-row-gap: 20px;
+	}
+
+	nav {
+		grid-column: 1 /9;
+		grid-row: 1/2;
+		padding: 0 6px;
+		box-shadow: none;
+		position: relative;
+	}
+
+	nav .nav-brand {
+		padding-left: 10px;
+		color: #7d5e2a;
+		font-size: 22px;
+		display: flex;
+	}
+
+	nav ul {
+		grid-column: unset;
+		height: 100vh;
+		width: 40%;
+		display: inline-block;
+		background-color: #1f1f1f;
+		position: absolute;
+		top: 0;
+		left: -100%;
+		text-align: center;
+		transition: all 0.5s;
+	}
+
+	nav ul li {
+		display: inline-block;
+		width: 100%;
+		padding-top: 40px;
+		margin-left: 0px;
+	}
+
+	nav ul li .nav-link {
+		font-size: 20px;
+		transition: all 0.5s;
+		cursor: pointer;
+		color: #f5f5f5;
+	}
+
+	nav ul li .nav-link:hover {
+		background-color: unset;
+		color: #7d5e2a;
+	}
+
+	nav label {
+		grid-column: 12/13;
+		display: inline;
+		order: 3;
+		margin-right: 10px;
+	}
+	nav label i {
+		cursor: pointer;
+	}
+	main {
+		grid-row: 2/8;
+		z-index: -2;
+	}
+
+	main .main-content h1 {
+		font-size: 60px;
+		color: #7d5e2a;
+		text-transform: uppercase;
+	}
+
+	#check:checked ~ ul {
+		left: 0;
+	}
+	footer {
+		grid-row: 8/9;
+	}
+}
