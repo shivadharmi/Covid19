@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Main from './Main';
 import Footer from './Footer';
 import Advices from './Advices';
-import Mask from './Mask';
+import Statistics from './Statistics';
 import Myths from './Myths';
 import Who from './Who';
 
@@ -23,8 +23,8 @@ function App() {
 				<Route exact path='/myths'>
 					<Myths />
 				</Route>
-				<Route exact path='/mask'>
-					<Mask />
+				<Route exact path='/statistics'>
+					<Statistics />
 				</Route>
 				<Route exact path='/who'>
 					<Who />
