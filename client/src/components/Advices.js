@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 class Advices extends React.Component {
-	state = { who: { askWho: [], beReady: [], protectYou: [] } };
+	state = { who: { askWho: [], beReady: [], protectYou: [], whileTravel: [] } };
 	componentDidMount() {
 		axios.get('/api/data').then(response => {
 			console.log(response.data);
@@ -43,23 +43,40 @@ class Advices extends React.Component {
 			);
 		});
 	}
+
+	whileTravel() {
+		return this.state.who.whileTravel.map(x => {
+			return (
+				<div className='card-3'>
+					<a href={x}>
+						<img src={x} alt='' />
+					</a>
+				</div>
+			);
+		});
+	}
+
 	render() {
 		console.log(this.state);
 		return (
-			<div className='advices'>
-				<h3>
+			<div className='fx'>
+				<h3 className='fx-head'>
 					Ask WHO <small>Click on images to view in full screen</small>
 				</h3>
-				<div class='container'>{this.askWho()}</div>
+				<div class='fx-container'>{this.askWho()}</div>
 
-				<h3>Be Ready for coronavirus</h3>
-				<div className='container'>{this.beReady()}</div>
+				<h3 className='fx-head'>Be Ready for coronavirus</h3>
+				<div className='fx-container'>{this.beReady()}</div>
 
-				<h3>Protect yourself and others from getting sick</h3>
-				<div className='container'>{this.protectYou()}</div>
+				<h3 className='fx-head'>
+					Protect yourself and others from getting sick
+				</h3>
+				<div className='fx-container'>{this.protectYou()}</div>
 
-				<h3>How to cope with stress during 2019-nCoV outbreak</h3>
-				<div className='container'>
+				<h3 className='fx-head'>
+					How to cope with stress during 2019-nCoV outbreak
+				</h3>
+				<div className='fx-container'>
 					<a
 						className='advice-link'
 						href='https://www.who.int/docs/default-source/coronaviruse/coping-with-stress.pdf?sfvrsn=9845bc3a_2'>
@@ -72,6 +89,8 @@ class Advices extends React.Component {
 						outbreak
 					</a>
 				</div>
+				<h3 className='fx-head'>Stay healthy while travelling</h3>
+				<div className='fx-container'>{this.whileTravel()}</div>
 			</div>
 		);
 	}
