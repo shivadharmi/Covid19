@@ -9,35 +9,23 @@ class Myths extends React.Component {
 			console.log(response.data);
 		});
 	}
+
+	mythsRenderer() {
+		return this.state.map(x => {
+			return (
+				<div className='card-2'>
+					<h3 className='fx-head'>{x.title}</h3>
+					<a href={x.link}>
+						<img src={x.link} alt='' />
+					</a>
+				</div>
+			);
+		});
+	}
 	render() {
 		return (
 			<div className='fx'>
-				<div class='fx-container'>
-					<div className='card-2'>
-						<h3 className='fx-head'>
-							COVID-19 virus can be transmitted in areas with hot and humid
-							climates.
-						</h3>
-						<a href='https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/52.png'>
-							<img
-								src='https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/52.png'
-								alt=''
-							/>
-						</a>
-					</div>
-					<div className='card-2'>
-						<h3 className='fx-head'>
-							COVID-19 virus can be transmitted in areas with hot and humid
-							climates.
-						</h3>
-						<a href='https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/52.png'>
-							<img
-								src='https://www.who.int/images/default-source/health-topics/coronavirus/myth-busters/52.png'
-								alt=''
-							/>
-						</a>
-					</div>
-				</div>
+				<div class='fx-container'>{this.mythsRenderer()}</div>
 			</div>
 		);
 	}
