@@ -2,9 +2,11 @@ import React from 'react';
 import axios from 'axios';
 
 class Advices extends React.Component {
+	state = {};
 	componentDidMount() {
-		axios.get('http://localhost:5000/api/data').then(response => {
+		axios.get('/api/data').then(response => {
 			console.log(response.data);
+			this.setState(...response.data.who);
 		});
 	}
 	render() {
