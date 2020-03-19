@@ -12,7 +12,7 @@ class Advices extends React.Component {
 	askWho() {
 		return this.state.who.askWho.map(x => {
 			return (
-				<div className='card'>
+				<div className='card-3'>
 					<a href={x}>
 						<img src={x} alt='' />
 					</a>
@@ -24,7 +24,7 @@ class Advices extends React.Component {
 	beReady() {
 		return this.state.who.beReady.map(x => {
 			return (
-				<div className='card'>
+				<div className='card-3'>
 					<a href={x}>
 						<img src={x} alt='' />
 					</a>
@@ -35,7 +35,7 @@ class Advices extends React.Component {
 	protectYou() {
 		return this.state.who.protectYou.map(x => {
 			return (
-				<div className='card'>
+				<div className='card-3'>
 					<a href={x}>
 						<img src={x} alt='' />
 					</a>
