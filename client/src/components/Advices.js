@@ -1,11 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import data from './data';
-if (process.env.NODE_ENV === 'production') {
-	data = this.state;
-}
+
 class Advices extends React.Component {
-	state = {};
+	state = { who: { askWho: [], beReady: [], protectYou: [] } };
 	componentDidMount() {
 		axios.get('/api/data').then(response => {
 			console.log(response.data);
@@ -13,7 +10,7 @@ class Advices extends React.Component {
 		});
 	}
 	askWho() {
-		return data.who.askWho.map(x => {
+		return this.state.who.askWho.map(x => {
 			return (
 				<div className='card'>
 					<a href={x}>
@@ -25,7 +22,7 @@ class Advices extends React.Component {
 	}
 
 	beReady() {
-		return data.who.beReady.map(x => {
+		return this.state.who.beReady.map(x => {
 			return (
 				<div className='card'>
 					<a href={x}>
@@ -36,7 +33,7 @@ class Advices extends React.Component {
 		});
 	}
 	protectYou() {
-		return data.who.protectYou.map(x => {
+		return this.state.who.protectYou.map(x => {
 			return (
 				<div className='card'>
 					<a href={x}>
