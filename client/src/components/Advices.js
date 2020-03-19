@@ -6,7 +6,7 @@ class Advices extends React.Component {
 	componentDidMount() {
 		axios.get('/api/data').then(response => {
 			console.log(response.data);
-			this.setState(...response.data);
+			this.setState({ ...response.data });
 		});
 	}
 	askWho() {
