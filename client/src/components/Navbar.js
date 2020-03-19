@@ -23,8 +23,8 @@ const Navbar = () => {
 					</Link>
 				</li>
 				<li>
-					<Link to='/mask' className='nav-link'>
-						mask
+					<Link to='/statistics' className='nav-link'>
+						Statistics
 					</Link>
 				</li>
 				<li>
