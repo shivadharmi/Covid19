@@ -5,10 +5,10 @@ const Navbar = () => {
 	var uncollapsed = false;
 	const collapse = () => {
 		if (uncollapsed === false) {
-			document.getElementById('nav-links').style.left = '-100%';
+			document.getElementById('nav-links').style.left = '0';
 			uncollapsed = !uncollapsed;
 		} else {
-			document.getElementById('nav-links').style.left = '0';
+			document.getElementById('nav-links').style.left = '-100%';
 			uncollapsed = !uncollapsed;
 		}
 	};
