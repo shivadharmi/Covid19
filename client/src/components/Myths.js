@@ -2,16 +2,15 @@ import React from 'react';
 import axios from 'axios';
 
 class Myths extends React.Component {
-	state = [];
+	state = { data: [] };
 	componentDidMount() {
 		axios.get('/api/data/myths').then(response => {
-			this.setState([...response.data]);
-			console.log(response.data);
+			this.setState({ data: [...response.data] });
 		});
 	}
 
 	mythsRenderer() {
-		return this.state.map(x => {
+		return this.state.data.map(x => {
 			return (
 				<div className='card-2'>
 					<h3 className='fx-head'>{x.title}</h3>
