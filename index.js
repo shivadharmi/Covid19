@@ -3,7 +3,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+const apiRoutes = require('./routes/api');
+
 app.use(bodyParser.json());
+
+app.use('/api', apiRoutes);
 
 if (process.env.NODE_ENV === 'production') {
 	// It will try to serve the file required by use of the below

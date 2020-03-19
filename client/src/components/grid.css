@@ -65,6 +65,7 @@ nav ul li .nav-link {
 	padding: 5px;
 	cursor: pointer;
 	font-weight: 500;
+	transition: all 0.5s;
 }
 nav ul li .nav-link:hover {
 	background-color: #7d5e2a;
@@ -168,11 +169,13 @@ div.advices h3 small {
 div.container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	align-content: space-between;
 	padding: 5px;
 }
 .card {
 	width: 30%;
+	margin: 8px;
 }
 img {
 	width: 100%;
