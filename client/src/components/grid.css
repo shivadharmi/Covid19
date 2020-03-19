@@ -183,7 +183,7 @@ div.fx-container {
 }
 .card-1 {
 	width: 90%;
-	margin: 8px;
+	margin: 10px;
 }
 img {
 	width: 100%;
@@ -200,6 +200,36 @@ div.fx-container .advice-link {
 div.fx-container .advice-link:hover {
 	background-color: #7d5e2a;
 	color: #000;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 95vw;
+	border: 1px solid #ddd;
+	margin-top: 30px;
+}
+table caption {
+	color: #f5f5f5;
+	font-size: 15px;
+}
+
+th,
+td {
+	text-align: center;
+	padding: 3px;
+}
+
+th {
+	font-size: 15px;
+	color: #7d5e2a;
+}
+td {
+	font-size: 12px;
+	color: #f5f5f5;
+}
+tr:nth-child(even) {
+	background-color: #7d5e2a;
 }
 
 @media screen and (max-width: 768px) {
@@ -227,7 +257,7 @@ div.fx-container .advice-link:hover {
 
 	nav ul {
 		grid-column: unset;
-		height: 100vh;
+		min-height: 127vh;
 		width: 40%;
 		display: inline-block;
 		background-color: #1f1f1f;
@@ -290,7 +320,8 @@ div.fx-container .advice-link:hover {
 	.card-2,
 	.card-3 {
 		width: 100%;
-		margin-bottom: 8px;
+		padding: 5px;
+		margin-bottom: 10px;
 	}
 
 	div.fx .fx-head {
@@ -299,6 +330,17 @@ div.fx-container .advice-link:hover {
 		margin: 3px 0 0 3px;
 		font-size: 12px;
 		font-weight: 500;
+	}
+	table {
+		height: 80vh;
+		overflow-y: scroll;
+		display: block;
+		width: 88vw;
+		overflow-x: scroll;
+	}
+	.table-container .card-1 {
+		margin: 0px;
+		padding: 0px;
 	}
 }
 

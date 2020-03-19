@@ -5,8 +5,8 @@ const Navbar = () => {
 	return (
 		<nav>
 			<input type='checkbox' id='check'></input>
-			<label for='check' className='checkbtn'>
-				<i class='fas fa-bars'></i>
+			<label htmlFor='check' className='checkbtn'>
+				<i className='fas fa-bars'></i>
 			</label>
 			<Link to='/'>
 				<h2 className='nav-brand'>COVID19</h2>
