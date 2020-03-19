@@ -290,13 +290,13 @@ div.fx-container .advice-link:hover {
 	.card-2,
 	.card-3 {
 		width: 100%;
-		margin-bottom: 10px;
+		margin-bottom: 8px;
 	}
 
 	div.fx .fx-head {
 		color: #f5f5f5;
-		padding: 5px;
-		margin: 5px 0 0 5px;
+		padding: 3px;
+		margin: 3px 0 0 3px;
 		font-size: 12px;
 		font-weight: 500;
 	}
