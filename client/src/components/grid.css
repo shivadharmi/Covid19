@@ -258,11 +258,11 @@ tr:nth-child(even) {
 	nav ul {
 		grid-column: unset;
 		min-height: 127vh;
-		width: 40%;
+		width: 100%;
 		display: inline-block;
 		background-color: #1f1f1f;
 		position: absolute;
-		top: 0;
+		top: 60px;
 		left: -100%;
 		text-align: center;
 		transition: all 0.5s;
