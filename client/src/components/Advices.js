@@ -4,7 +4,7 @@ import axios from 'axios';
 class Advices extends React.Component {
 	state = { who: { askWho: [], beReady: [], protectYou: [], whileTravel: [] } };
 	componentDidMount() {
-		axios.get('/api/data').then(response => {
+		axios.get('/api/data/advices').then(response => {
 			console.log(response.data);
 			this.setState({ ...response.data });
 		});

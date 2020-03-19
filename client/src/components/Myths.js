@@ -4,7 +4,7 @@ import axios from 'axios';
 class Myths extends React.Component {
 	state = [];
 	componentDidMount() {
-		axios.get('/api/myths').then(response => {
+		axios.get('/api/data/myths').then(response => {
 			this.setState([...response.data]);
 			console.log(response.data);
 		});
