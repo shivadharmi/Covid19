@@ -23,6 +23,7 @@ class Myths extends React.Component {
 		});
 	}
 	render() {
+		console.log(this.state);
 		return (
 			<div className='fx'>
 				<div class='fx-container'>{this.mythsRenderer()}</div>
