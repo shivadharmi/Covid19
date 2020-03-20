@@ -1,0 +1,22 @@
+.search{
+    float: right;
+    margin-right: 5%
+}
+
+.searchBox{
+    color: goldenrod;
+    background-color: black;  
+    font-size: large; 
+    border-radius: 10px;
+    border-color: goldenrod;
+    outline: none;
+}
+
+input:focus{
+    padding-left: 5px;
+}
+
+.searchLabel{
+    color:goldenrod;
+    font-size: large;
+}
