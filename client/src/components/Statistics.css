@@ -1,22 +1,32 @@
-.search{
-    float: right;
-    margin-right: 5%
+.search {
+	float: right;
+	margin-right: 5%;
+	padding: 10px;
 }
 
-.searchBox{
-    color: goldenrod;
-    background-color: black;  
-    font-size: large; 
-    border-radius: 10px;
-    border-color: goldenrod;
-    outline: none;
+.searchBox {
+	color: #7d5e2a;
+	background-color: black;
+	font-size: large;
+	border-radius: 3px;
+	border-color: #7d5e2a;
+	outline: none;
+	width: 150px;
 }
 
-input:focus{
-    padding-left: 5px;
+input:focus {
+	padding-left: 5px;
 }
 
-.searchLabel{
-    color:goldenrod;
-    font-size: large;
+.searchLabel {
+	color: #7d5e2a;
+	text-transform: lowercase;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+::placeholder {
+	color: #f5f5f5;
+	opacity: 0.5;
+	text-transform: lowercase;
 }
