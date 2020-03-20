@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Pie, Bar } from 'react-chartjs-2';
 import './Statistics.css';
-// import data from './data';
+import data from './data';
 class Statistics extends Component {
 	state = {
 		pieChartData: {
@@ -51,7 +51,7 @@ class Statistics extends Component {
 			responsive: true,
 			maintainAspectRatio: false
 		},
-		barData: []
+		barData: data
 	};
 	componentDidMount() {
 		axios.get('https://coronavirus-19-api.herokuapp.com/all').then(response => {
@@ -71,9 +71,9 @@ class Statistics extends Component {
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		axios.get('api//data/barData').then(response => {
-			this.setState({ barData: response.data });
-		});
+		// axios.get('api//data/barData').then(response => {
+		// 	this.setState({ barData: response.data });
+		// });
 	}
 	static defaultProps = {
 		displayTitle: true,
@@ -134,7 +134,11 @@ class Statistics extends Component {
 	}
 	render() {
 		return (
-			<div className='fx'>
+			<div
+				className='fx'
+				style={{
+					paddingLeft: '0px'
+				}}>
 				<div className='card-1'>
 					<Pie
 						data={this.state.pieChartData}
@@ -189,7 +193,14 @@ class Statistics extends Component {
 						</table>
 					</div>
 				</div>
-				<div className='fx-container'>{this.allStatesData()}</div>
+				<div
+					className='fx-container'
+					style={{
+						paddingLeft: '0px',
+						paddingRight: '0px'
+					}}>
+					{this.allStatesData()}
+				</div>
 			</div>
 		);
 	}
