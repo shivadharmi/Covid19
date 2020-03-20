@@ -9,5 +9,7 @@ Route.get('/data/advices', (req, res) => {
 Route.get('/data/myths', (req, res) => {
 	res.send(data.myths);
 });
-
+Route.get('/data/barData', (req, res) => {
+	res.send(data.barData);
+});
 module.exports = Route;

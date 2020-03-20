@@ -115,3 +115,87 @@ const myths = [
 ];
 
 module.exports.myths = myths;
+
+module.exports.barData = [
+	{
+		label: 'Andhra Pradesh',
+		data: [3, 0, 0, 0]
+	},
+	{
+		label: 'Chhattishgarh',
+		data: [1, 0, 0, 0]
+	},
+	{
+		label: 'Delhi',
+		data: [16, 1, 5, 1]
+	},
+	{
+		label: 'Gujarat',
+		data: [5, 0, 0, 0]
+	},
+	{
+		label: 'Haryana',
+		data: [3, 14, 0, 0]
+	},
+	{
+		label: 'Karnataka',
+		data: [15, 0, 1, 1]
+	},
+	{
+		label: 'kerala',
+		data: [26, 2, 3, 0]
+	},
+	{
+		label: 'Maharastra',
+		data: [48, 3, 0, 1]
+	},
+	,
+	{
+		label: 'Odisha',
+		data: [2, 0, 0, 0]
+	},
+	{
+		label: 'Puducherry',
+		data: [1, 0, 0, 0]
+	},
+	{
+		label: 'Punjab',
+		data: [2, 0, 0, 1]
+	},
+	{
+		label: 'Rajasthan',
+		data: [15, 2, 3, 0]
+	},
+	{
+		label: 'Tamil Nadu',
+		data: [3, 0, 1, 0]
+	},
+	{
+		label: 'Telangana',
+		data: [8, 9, 1, 0]
+	},
+	{
+		label: 'Union Territory Of Chandigarh',
+		data: [1, 0, 0, 0]
+	},
+	{
+		label: 'Union Territory Of Jammu And Kashmir',
+		data: [4, 0, 0, 0]
+	},
+	{
+		label: 'Union Territory Of Ladakh',
+		data: [10, 0, 0, 0]
+	},
+	{
+		label: 'Uttar Pradesh',
+		data: [22, 1, 9, 0]
+	},
+	{
+		label: 'Uttarakhand',
+		data: [3, 0, 0, 0]
+	},
+	{
+		label: 'West Bengal',
+		data: [2, 0, 0, 0]
+	}
+];
