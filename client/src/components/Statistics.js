@@ -15,7 +15,9 @@ class Statistics extends Component {
 				}
 			]
 		},
-		tableData: []
+		tableData: [],
+		searchValue:"",
+		tableStore:[]
 	};
 	componentDidMount() {
 		axios.get('https://coronavirus-19-api.herokuapp.com/all').then(response => {
@@ -32,8 +34,8 @@ class Statistics extends Component {
 		axios
 			.get('https://coronavirus-19-api.herokuapp.com/countries')
 			.then(response => {
-				console.log(response.data);
-				this.setState({ tableData: response.data });
+				this.setState({ tableData: response.data,
+				tableStore:response.data });
 			});
 	}
 	static defaultProps = {
@@ -41,6 +43,15 @@ class Statistics extends Component {
 		displayLegend: true,
 		legendPosition: 'right'
 	};
+
+	onSearchChange = (e) => {
+		var s = e.target.value
+		var ar = this.state.tableStore.filter(res=>res.country.toLowerCase().startsWith(s.toLowerCase()))
+		this.setState({
+				searchValue:e.target.value,
+				tableData:ar
+			})
+	}
 
 	allCountryData() {
 		return this.state.tableData.map(x => {
@@ -83,6 +94,14 @@ class Statistics extends Component {
 						height={300}
 					/>
 				</div>
+				
+				<br />	
+				<div className="search">
+				<label className="searchLabel">Country :  </label>
+				<input type="text" class="searchBox" placeholder="Search Country" 
+				value={this.state.searchValue} onChange={this.onSearchChange}/>
+				</div>
+
 				<div className='table-container'>
 					<div className='card-1'>
 						<table>
@@ -104,6 +123,7 @@ class Statistics extends Component {
 						</table>
 					</div>
 				</div>
+
 			</div>
 		);
 	}
