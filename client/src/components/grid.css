@@ -335,7 +335,7 @@ tr:nth-child(even) {
 		height: 80vh;
 		overflow-y: scroll;
 		display: block;
-		width: 88vw;
+		width: 90vw;
 		overflow-x: scroll;
 	}
 	.table-container .card-1 {
