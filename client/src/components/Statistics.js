@@ -71,9 +71,8 @@ class Statistics extends Component {
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		axios.get('/data/barData').then(response => {
+		axios.get('api//data/barData').then(response => {
 			this.setState({ barData: response.data });
-			console.log(response.data);
 		});
 	}
 	static defaultProps = {
@@ -134,7 +133,6 @@ class Statistics extends Component {
 		});
 	}
 	render() {
-		console.log(this.state.barData);
 		return (
 			<div className='fx'>
 				<div className='card-1'>
