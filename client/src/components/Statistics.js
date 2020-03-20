@@ -71,9 +71,9 @@ class Statistics extends Component {
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		// axios.get('api//data/barData').then(response => {
-		// 	this.setState({ barData: response.data });
-		// });
+		axios.get('api//data/barData').then(response => {
+			this.setState({ barData: response.data });
+		});
 	}
 	static defaultProps = {
 		displayTitle: true,
