@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Pie, Bar } from 'react-chartjs-2';
 import './Statistics.css';
-import data from './data';
+// import data from './data';
 class Statistics extends Component {
 	state = {
 		pieChartData: {
