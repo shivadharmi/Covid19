@@ -193,7 +193,9 @@ class Statistics extends Component {
 						</table>
 					</div>
 				</div>
-				<h3 className='fx-head'>Cases Of All States</h3>
+				<h3 className='fx-head'>
+					Cases Of All States <small>TCC = TOTAL CONFIRMED CASES</small>
+				</h3>
 				<div
 					className='fx-container'
 					style={{
