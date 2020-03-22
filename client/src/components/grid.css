@@ -179,6 +179,7 @@ div.fx-container {
 }
 .card-2 {
 	width: 45%;
+	padding: 8px;
 	margin: 8px;
 }
 .card-1 {
@@ -205,9 +206,13 @@ div.fx-container .advice-link:hover {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	width: 95vw;
+	width: 100%;
 	border: 1px solid #ddd;
 	margin-top: 30px;
+	height: 80vh;
+	overflow-y: scroll;
+	display: block;
+	overflow-x: scroll;
 }
 table caption {
 	color: #f5f5f5;
@@ -266,6 +271,7 @@ tr:nth-child(even) {
 		left: -100%;
 		text-align: center;
 		transition: all 0.5s;
+		z-index: 10;
 	}
 
 	nav ul li {
@@ -335,7 +341,9 @@ tr:nth-child(even) {
 		height: 80vh;
 		overflow-y: scroll;
 		display: block;
-		width: 94vw;
+		width: 90%;
+		margin: auto;
+		margin-top: 10px;
 		overflow-x: scroll;
 	}
 	.table-container .card-1 {

@@ -139,41 +139,39 @@ class Statistics extends Component {
 				style={{
 					paddingLeft: '0px'
 				}}>
-				<div className='card-1'>
-					<Pie
-						data={this.state.pieChartData}
-						options={{
-							title: {
-								display: 'this.props.displayTitle',
-								text: 'Statistics Around The World',
-								fontSize: 25
-							},
-							legend: {
-								display: this.props.displayLegend,
-								position: this.props.legendPosition
-							},
-							responsive: true,
-							maintainAspectRatio: false
-						}}
-						width={700}
-						height={300}
-					/>
-				</div>
+				<div className='fx-container'>
+					<div className='card-2'>
+						<Pie
+							data={this.state.pieChartData}
+							options={{
+								title: {
+									display: 'this.props.displayTitle',
+									text: 'Statistics Around The World',
+									fontSize: 25
+								},
+								legend: {
+									display: this.props.displayLegend,
+									position: this.props.legendPosition
+								},
+								responsive: true,
+								maintainAspectRatio: false
+							}}
+							width={700}
+							height={300}
+						/>
+					</div>
 
-				<br />
-				<div className='search'>
-					<label className='searchLabel'>Country : </label>
-					<input
-						type='text'
-						class='searchBox'
-						placeholder='Search Country'
-						value={this.state.searchValue}
-						onChange={this.onSearchChange}
-					/>
-				</div>
-
-				<div className='table-container'>
-					<div className='card-1'>
+					<div className='card-2'>
+						<div className='search'>
+							<label className='searchLabel'>Country : </label>
+							<input
+								type='text'
+								class='searchBox'
+								placeholder='Search Country'
+								value={this.state.searchValue}
+								onChange={this.onSearchChange}
+							/>
+						</div>
 						<table>
 							<caption>Statistics of all countries</caption>
 							<thead>
@@ -192,17 +190,17 @@ class Statistics extends Component {
 							<tbody>{this.allCountriesData()}</tbody>
 						</table>
 					</div>
-				</div>
-				<h3 className='fx-head'>
-					Cases Of All States <small>TCC = TOTAL CONFIRMED CASES</small>
-				</h3>
-				<div
-					className='fx-container'
-					style={{
-						paddingLeft: '0px',
-						paddingRight: '0px'
-					}}>
-					{this.allStatesData()}
+					<h3 className='fx-head'>
+						Cases Of All States <small>TCC = TOTAL CONFIRMED CASES</small>
+					</h3>
+					<div
+						className='fx-container'
+						style={{
+							paddingLeft: '0px',
+							paddingRight: '0px'
+						}}>
+						{this.allStatesData()}
+					</div>
 				</div>
 			</div>
 		);

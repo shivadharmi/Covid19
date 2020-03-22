@@ -1,7 +1,7 @@
 .search {
-	float: right;
-	margin-right: 5%;
-	padding: 10px;
+	display: block;
+	width: 40%;
+	margin: auto;
 }
 
 .searchBox {
