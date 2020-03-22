@@ -247,7 +247,7 @@ tr:nth-child(even) {
 		min-height: 100vh;
 		display: grid;
 		grid-template-columns: repeat(8, 1fr);
-		grid-row-gap: 20px;
+		grid-row-gap: 8px;
 	}
 
 	nav {
