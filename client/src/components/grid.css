@@ -179,8 +179,7 @@ div.fx-container {
 }
 .card-2 {
 	width: 45%;
-	padding: 8px;
-	margin: 8px;
+	margin: 20px;
 }
 .card-1 {
 	width: 90%;
@@ -235,6 +234,11 @@ td {
 }
 tr:nth-child(even) {
 	background-color: #7d5e2a;
+}
+
+.bar-border {
+	border: 1px solid #ccc;
+	border-radius: 3px;
 }
 
 @media screen and (max-width: 768px) {
@@ -326,8 +330,8 @@ tr:nth-child(even) {
 	.card-2,
 	.card-3 {
 		width: 100%;
-		padding: 5px;
-		margin-bottom: 10px;
+		margin-bottom: 20px;
+		margin: 8px;
 	}
 
 	div.fx .fx-head {
@@ -341,9 +345,7 @@ tr:nth-child(even) {
 		height: 80vh;
 		overflow-y: scroll;
 		display: block;
-		width: 90%;
-		margin: auto;
-		margin-top: 10px;
+		width: 88vw;
 		overflow-x: scroll;
 	}
 	.table-container .card-1 {

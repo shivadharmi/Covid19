@@ -1,6 +1,6 @@
 .search {
 	display: block;
-	width: 40%;
+	width: 50%;
 	margin: auto;
 }
 
@@ -21,12 +21,13 @@ input:focus {
 .searchLabel {
 	color: #7d5e2a;
 	text-transform: lowercase;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 700;
 }
 
 ::placeholder {
 	color: #f5f5f5;
-	opacity: 0.5;
+	opacity: 0.4;
 	text-transform: lowercase;
+	font-weight: 400;
 }

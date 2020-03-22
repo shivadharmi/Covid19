@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Pie, Bar } from 'react-chartjs-2';
 import './Statistics.css';
-// import data from './data';
+import data from './data';
 class Statistics extends Component {
 	state = {
 		pieChartData: {
@@ -51,7 +51,7 @@ class Statistics extends Component {
 			responsive: true,
 			maintainAspectRatio: false
 		},
-		barData: []
+		barData: data
 	};
 	componentDidMount() {
 		axios.get('https://coronavirus-19-api.herokuapp.com/all').then(response => {
@@ -127,7 +127,9 @@ class Statistics extends Component {
 			const options = { ...this.state.options };
 			return (
 				<div className='card-2'>
-					<Bar data={data} options={options} width={700} height={300} />
+					<div className='bar-border'>
+						<Bar data={data} options={options} width={700} height={300} />
+					</div>
 				</div>
 			);
 		});
@@ -160,18 +162,15 @@ class Statistics extends Component {
 							height={300}
 						/>
 					</div>
-
 					<div className='card-2'>
-						<div className='search'>
-							<label className='searchLabel'>Country : </label>
-							<input
-								type='text'
-								class='searchBox'
-								placeholder='Search Country'
-								value={this.state.searchValue}
-								onChange={this.onSearchChange}
-							/>
-						</div>
+						<label className='searchLabel'>Country : </label>
+						<input
+							type='text'
+							class='searchBox'
+							placeholder='Search Country'
+							value={this.state.searchValue}
+							onChange={this.onSearchChange}
+						/>
 						<table>
 							<caption>Statistics of all countries</caption>
 							<thead>
@@ -190,17 +189,18 @@ class Statistics extends Component {
 							<tbody>{this.allCountriesData()}</tbody>
 						</table>
 					</div>
-					<h3 className='fx-head'>
-						Cases Of All States <small>TCC = TOTAL CONFIRMED CASES</small>
-					</h3>
-					<div
-						className='fx-container'
-						style={{
-							paddingLeft: '0px',
-							paddingRight: '0px'
-						}}>
-						{this.allStatesData()}
-					</div>
+				</div>
+
+				<h3 className='fx-head'>
+					Cases Of All States <small>TCC = TOTAL CONFIRMED CASES</small>
+				</h3>
+				<div
+					className='fx-container'
+					style={{
+						paddingLeft: '0px',
+						paddingRight: '0px'
+					}}>
+					{this.allStatesData()}
 				</div>
 			</div>
 		);
