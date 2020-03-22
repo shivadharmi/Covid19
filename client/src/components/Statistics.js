@@ -68,6 +68,7 @@ class Statistics extends Component {
 		axios
 			.get('https://coronavirus-19-api.herokuapp.com/countries')
 			.then(response => {
+				console.log(response.data);
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
@@ -172,7 +173,13 @@ class Statistics extends Component {
 							onChange={this.onSearchChange}
 						/>
 						<table>
-							<caption>Statistics of all countries</caption>
+							<caption>
+								Statistics of all countries{' '}
+								<h3 className='fx-head'>
+									<small>TC = TODAY CASES ; TD = TODAY DEATHS</small>
+								</h3>
+							</caption>
+
 							<thead>
 								<tr>
 									<th>country</th>

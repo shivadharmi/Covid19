@@ -28,11 +28,11 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
-	grid-row-gap: 20px;
+	grid-row-gap: 15px;
 }
 nav {
 	grid-column: 1 / 13;
-	height: 60px;
+	height: 50px;
 	padding: 0 8px;
 	background-color: #0f0f0f;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
@@ -83,7 +83,7 @@ nav label {
 
 main {
 	grid-column: 1/13;
-	grid-row: 2/12;
+	min-height: 90vh;
 	background-color: #0f0f0f;
 	margin: 0 10px;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
@@ -116,7 +116,7 @@ main .main-content h3 strong:hover {
 }
 footer {
 	grid-column: 1/13;
-	height: 60px;
+	height: 50px;
 	background-color: #0f0f0f;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
 	border-radius: 3px;
@@ -215,6 +215,7 @@ table {
 }
 table caption {
 	color: #f5f5f5;
+	margin-top: 10px;
 	font-size: 15px;
 }
 
