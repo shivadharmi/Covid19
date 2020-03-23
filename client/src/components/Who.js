@@ -30,7 +30,7 @@ const renderVid = () => {
 							src={x.src}
 							frameborder='0'
 							allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-							allowfullscreen></iframe>
+							allowfullscreen='true'></iframe>
 					</div>
 				</div>
 			</div>
