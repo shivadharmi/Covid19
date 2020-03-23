@@ -39,7 +39,7 @@ const Navbar = () => {
 				</li>
 				<li>
 					<Link to='/who' className='nav-link' onClick={collapse}>
-						who
+						Videos
 					</Link>
 				</li>
 			</ul>

@@ -19,7 +19,7 @@ class Statistics extends Component {
 		searchValue: '',
 		tableStore: [],
 		barChartData: {
-			labels: ['TCC(INDIANS)', 'TCC(FORIENERS)', 'CURED/DISCHARGED', 'DEATH'],
+			labels: ['TCC(INDIANS)', 'TCC(FOREIGNER)', 'CURED/DISCHARGED', 'DEATH'],
 			datasets: [
 				{
 					backgroundColor: [
