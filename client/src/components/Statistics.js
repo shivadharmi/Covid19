@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Pie, Bar } from 'react-chartjs-2';
+import { Doughnut, Bar } from 'react-chartjs-2';
 import './Statistics.css';
-// import data from './data';
+import data from './data';
 class Statistics extends Component {
 	state = {
-		pieChartData: {
+		doughnutChartData: {
 			labels: ['Active Cases', 'Dead', 'Recovered'],
 			datasets: [
 				{
 					label: 'Total',
 					data: [],
-					backgroundColor: ['blue', 'red', 'green'],
+					backgroundColor: [
+						'rgb(0,63,92,0.5)',
+						'rgba(188,80,144,0.5)',
+						'rgb(255,166,0,0.5)',
+					],
+					borderWidth: '1',
+					borderColor: [
+						'rgb(0,63,92,1)',
+						'rgba(188,80,144,1)',
+						'rgb(255,166,0,1)',
+					],
 				},
 			],
 		},
@@ -23,14 +33,14 @@ class Statistics extends Component {
 			datasets: [
 				{
 					backgroundColor: [
-						'rgba(255, 99, 132, 0.2)',
-						'rgba(54, 162, 235, 0.2)',
-						'rgba(255, 206, 86, 0.2)',
+						'rgb(212,80,135,0.7)',
+						'rgb(102,81,145,0.7)',
+						'rgb(255,166,0,0.7)',
 					],
 					borderColor: [
-						'rgba(255, 99, 132, 1)',
-						'rgba(54, 162, 235, 1)',
-						'rgba(255, 206, 86, 1)',
+						'rgb(212,80,135)',
+						'rgb(102,81,145,1)',
+						'rgb(255,166,0,1)',
 					],
 					borderWidth: 1,
 				},
@@ -49,7 +59,7 @@ class Statistics extends Component {
 			responsive: true,
 			maintainAspectRatio: false,
 		},
-		barData: [],
+		barData: data,
 	};
 	componentDidMount() {
 		axios
@@ -60,9 +70,9 @@ class Statistics extends Component {
 					response.data.deaths,
 					response.data.recovered,
 				];
-				var temp = this.state.pieChartData;
+				var temp = this.state.doughnutChartData;
 				temp.datasets[0].data = ar;
-				this.setState({ pieChartData: temp });
+				this.setState({ doughnutChartData: temp });
 			});
 
 		axios
@@ -72,9 +82,9 @@ class Statistics extends Component {
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		axios.get('api/data/barData').then((response) => {
-			this.setState({ barData: response.data });
-		});
+		// axios.get('api/data/barData').then((response) => {
+		// 	this.setState({ barData: response.data });
+		// });
 	}
 	static defaultProps = {
 		displayTitle: true,
@@ -144,8 +154,8 @@ class Statistics extends Component {
 				}}>
 				<div className='fx-container'>
 					<div className='card-2'>
-						<Pie
-							data={this.state.pieChartData}
+						<Doughnut
+							data={this.state.doughnutChartData}
 							options={{
 								title: {
 									display: 'this.props.displayTitle',
