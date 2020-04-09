@@ -116,17 +116,28 @@ main .main-content h3 strong:hover {
 }
 footer {
 	grid-column: 1/13;
-	height: 50px;
+	height: 70px;
 	background-color: #0f0f0f;
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.6);
 	border-radius: 3px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	position: relative;
+	text-align: center;
+	padding-bottom: 20px;
 }
 
 footer p {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	display: inline-block;
 	color: #f5f5f5;
+	margin-bottom: 10px;
+}
+
+footer p:nth-child(2) {
+	top: 80%;
+	font-size: 10px;
 }
 footer p strong {
 	color: #7d5e2a;
@@ -140,6 +151,19 @@ footer p strong:hover {
 	color: #000;
 	border-radius: 3px;
 	padding: 5px;
+}
+
+footer p div {
+	display: inline-block;
+	width: 150px;
+	/* height: 50px; */
+}
+footer p div img {
+	width: 100%;
+	height: 100%;
+	border-radius: 2px;
+	border: 1px solid #ccc;
+	padding: 3px;
 }
 div.fx {
 	grid-column: 1/13;
@@ -331,7 +355,7 @@ iframe {
 		left: 0;
 	}
 	footer {
-		height: 60px;
+		height: 90px;
 	}
 	.card-1,
 	.card-2,
@@ -363,6 +387,9 @@ iframe {
 	iframe {
 		height: 250px;
 		width: 100%;
+	}
+	footer p div {
+		width: 80px;
 	}
 }
 

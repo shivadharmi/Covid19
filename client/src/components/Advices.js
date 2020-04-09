@@ -4,13 +4,13 @@ import axios from 'axios';
 class Advices extends React.Component {
 	state = { who: { askWho: [], beReady: [], protectYou: [], whileTravel: [] } };
 	componentDidMount() {
-		axios.get('/api/data/advices').then(response => {
+		axios.get('/api/data/advices').then((response) => {
 			console.log(response.data);
 			this.setState({ ...response.data });
 		});
 	}
 	askWho() {
-		return this.state.who.askWho.map(x => {
+		return this.state.who.askWho.map((x) => {
 			return (
 				<div className='card-3'>
 					<a href={x}>
@@ -22,7 +22,7 @@ class Advices extends React.Component {
 	}
 
 	beReady() {
-		return this.state.who.beReady.map(x => {
+		return this.state.who.beReady.map((x) => {
 			return (
 				<div className='card-3'>
 					<a href={x}>
@@ -33,7 +33,7 @@ class Advices extends React.Component {
 		});
 	}
 	protectYou() {
-		return this.state.who.protectYou.map(x => {
+		return this.state.who.protectYou.map((x) => {
 			return (
 				<div className='card-3'>
 					<a href={x}>
@@ -45,7 +45,7 @@ class Advices extends React.Component {
 	}
 
 	whileTravel() {
-		return this.state.who.whileTravel.map(x => {
+		return this.state.who.whileTravel.map((x) => {
 			return (
 				<div className='card-3'>
 					<a href={x}>
@@ -97,15 +97,3 @@ class Advices extends React.Component {
 }
 
 export default Advices;
-
-{
-	/* 
-	<div className="container">
-		<h3></h3>
-		<div className="card">
-			<a href="">
-				<img src="" alt=""/>
-			</a>
-		</div> 	
-	</div>*/
-}
