@@ -11,90 +11,92 @@ class Statistics extends Component {
 				{
 					label: 'Total',
 					data: [],
-					backgroundColor: ['blue', 'red', 'green']
-				}
-			]
+					backgroundColor: ['blue', 'red', 'green'],
+				},
+			],
 		},
 		tableData: [],
 		searchValue: '',
 		tableStore: [],
 		barChartData: {
-			labels: ['TCC(INDIANS)', 'TCC(FOREIGNER)', 'CURED/DISCHARGED', 'DEATH'],
+			labels: ['TOTAL CONFIRMED', 'CURED/DISCHARGED', 'DEATH'],
 			datasets: [
 				{
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
 						'rgba(54, 162, 235, 0.2)',
 						'rgba(255, 206, 86, 0.2)',
-						'rgba(75, 192, 192, 0.2)'
+						'rgba(75, 192, 192, 0.2)',
 					],
 					borderColor: [
 						'rgba(255, 99, 132, 1)',
 						'rgba(54, 162, 235, 1)',
 						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)'
+						'rgba(75, 192, 192, 1)',
 					],
-					borderWidth: 1
-				}
-			]
+					borderWidth: 1,
+				},
+			],
 		},
 		options: {
 			scales: {
 				yAxes: [
 					{
 						ticks: {
-							beginAtZero: true
-						}
-					}
-				]
+							beginAtZero: true,
+						},
+					},
+				],
 			},
 			responsive: true,
-			maintainAspectRatio: false
+			maintainAspectRatio: false,
 		},
-		barData: []
+		barData: [],
 	};
 	componentDidMount() {
-		axios.get('https://coronavirus-19-api.herokuapp.com/all').then(response => {
-			var ar = [
-				response.data.cases,
-				response.data.deaths,
-				response.data.recovered
-			];
-			var temp = this.state.pieChartData;
-			temp.datasets[0].data = ar;
-			this.setState({ pieChartData: temp });
-		});
+		axios
+			.get('https://coronavirus-19-api.herokuapp.com/all')
+			.then((response) => {
+				var ar = [
+					response.data.cases,
+					response.data.deaths,
+					response.data.recovered,
+				];
+				var temp = this.state.pieChartData;
+				temp.datasets[0].data = ar;
+				this.setState({ pieChartData: temp });
+			});
 
 		axios
 			.get('https://coronavirus-19-api.herokuapp.com/countries')
-			.then(response => {
+			.then((response) => {
 				console.log(response.data);
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		axios.get('api//data/barData').then(response => {
+		axios.get('api//data/barData').then((response) => {
 			this.setState({ barData: response.data });
 		});
 	}
 	static defaultProps = {
 		displayTitle: true,
 		displayLegend: true,
-		legendPosition: 'right'
+		legendPosition: 'right',
 	};
 
-	onSearchChange = e => {
+	onSearchChange = (e) => {
 		var s = e.target.value;
-		var ar = this.state.tableStore.filter(res =>
+		var ar = this.state.tableStore.filter((res) =>
 			res.country.toLowerCase().startsWith(s.toLowerCase())
 		);
 		this.setState({
 			searchValue: e.target.value,
-			tableData: ar
+			tableData: ar,
 		});
 	};
 
 	allCountriesData() {
-		return this.state.tableData.map(x => {
+		return this.state.tableData.map((x) => {
 			return (
 				<tr>
 					<td>{x.country}</td>
@@ -112,7 +114,7 @@ class Statistics extends Component {
 	}
 
 	allStatesData() {
-		return this.state.barData.map(x => {
+		return this.state.barData.map((x) => {
 			const data = {
 				labels: this.state.barChartData.labels,
 				datasets: [
@@ -121,9 +123,9 @@ class Statistics extends Component {
 						backgroundColor: this.state.barChartData.datasets[0]
 							.backgroundColor,
 						borderColor: this.state.barChartData.datasets[0].borderColor,
-						borderWidth: this.state.barChartData.datasets[0].borderWidth
-					}
-				]
+						borderWidth: this.state.barChartData.datasets[0].borderWidth,
+					},
+				],
 			};
 			const options = { ...this.state.options };
 			return (
@@ -140,7 +142,7 @@ class Statistics extends Component {
 			<div
 				className='fx'
 				style={{
-					paddingLeft: '0px'
+					paddingLeft: '0px',
 				}}>
 				<div className='fx-container'>
 					<div className='card-2'>
@@ -150,14 +152,14 @@ class Statistics extends Component {
 								title: {
 									display: 'this.props.displayTitle',
 									text: 'Statistics Around The World',
-									fontSize: 25
+									fontSize: 25,
 								},
 								legend: {
 									display: this.props.displayLegend,
-									position: this.props.legendPosition
+									position: this.props.legendPosition,
 								},
 								responsive: true,
-								maintainAspectRatio: false
+								maintainAspectRatio: false,
 							}}
 							width={700}
 							height={300}
@@ -205,7 +207,7 @@ class Statistics extends Component {
 					className='fx-container'
 					style={{
 						paddingLeft: '0px',
-						paddingRight: '0px'
+						paddingRight: '0px',
 					}}>
 					{this.allStatesData()}
 				</div>
