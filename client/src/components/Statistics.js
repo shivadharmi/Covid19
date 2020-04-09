@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Doughnut, Bar } from 'react-chartjs-2';
 import './Statistics.css';
-import data from './data';
+// import data from './data';
 class Statistics extends Component {
 	state = {
 		doughnutChartData: {
@@ -59,7 +59,7 @@ class Statistics extends Component {
 			responsive: true,
 			maintainAspectRatio: false,
 		},
-		barData: data,
+		barData: [],
 	};
 	componentDidMount() {
 		axios
@@ -82,9 +82,9 @@ class Statistics extends Component {
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		// axios.get('api/data/barData').then((response) => {
-		// 	this.setState({ barData: response.data });
-		// });
+		axios.get('api/data/barData').then((response) => {
+			this.setState({ barData: response.data });
+		});
 	}
 	static defaultProps = {
 		displayTitle: true,
