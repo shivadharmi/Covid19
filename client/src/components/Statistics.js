@@ -19,20 +19,18 @@ class Statistics extends Component {
 		searchValue: '',
 		tableStore: [],
 		barChartData: {
-			labels: ['TOTAL CONFIRMED', 'CURED/DISCHARGED', 'DEATH'],
+			labels: ['TC', 'C/D', 'D'],
 			datasets: [
 				{
 					backgroundColor: [
 						'rgba(255, 99, 132, 0.2)',
 						'rgba(54, 162, 235, 0.2)',
 						'rgba(255, 206, 86, 0.2)',
-						'rgba(75, 192, 192, 0.2)',
 					],
 					borderColor: [
 						'rgba(255, 99, 132, 1)',
 						'rgba(54, 162, 235, 1)',
 						'rgba(255, 206, 86, 1)',
-						'rgba(75, 192, 192, 1)',
 					],
 					borderWidth: 1,
 				},
@@ -74,7 +72,7 @@ class Statistics extends Component {
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		axios.get('api//data/barData').then((response) => {
+		axios.get('api/data/barData').then((response) => {
 			this.setState({ barData: response.data });
 		});
 	}
@@ -129,7 +127,7 @@ class Statistics extends Component {
 			};
 			const options = { ...this.state.options };
 			return (
-				<div className='card-2'>
+				<div className='card-3'>
 					<div className='bar-border'>
 						<Bar data={data} options={options} width={700} height={300} />
 					</div>
@@ -201,7 +199,10 @@ class Statistics extends Component {
 				</div>
 
 				<h3 className='fx-head'>
-					Cases Of All States <small>TCC = TOTAL CONFIRMED CASES</small>
+					Cases Of All States{' '}
+					<small>
+						TC = TOTAL CONFIRMED; C/D = CURED/DISCHARGED; D = DEATHS
+					</small>
 				</h3>
 				<div
 					className='fx-container'
