@@ -8,14 +8,10 @@ class Footer extends React.Component {
 					Made With{' '}
 					<span role='img' aria-label='love emoji'>
 						❤️
-					</span>{' '}
-					By{' '}
-					<div class='logo'>
-						<img src={dsc_logo} alt='DSC logo' />
-					</div>
+					</span>
 				</p>
 				<p>
-					Developed By<strong> SIVA SANKAR & VASANTH</strong>
+					Developed By{' '}<strong> SIVA SANKAR</strong>
 				</p>
 			</footer>
 		);
