@@ -63,7 +63,7 @@ class Statistics extends Component {
 	};
 	componentDidMount() {
 		axios
-			.get('https://coronavirus-19-api.herokuapp.com/all')
+			.get('https://corona.lmao.ninja/v2/all')
 			.then((response) => {
 				var ar = [
 					response.data.cases,
@@ -76,14 +76,19 @@ class Statistics extends Component {
 			});
 
 		axios
-			.get('https://coronavirus-19-api.herokuapp.com/countries')
+			.get('https://corona.lmao.ninja/v2/countries')
 			.then((response) => {
-				console.log(response.data);
 				this.setState({ tableData: response.data, tableStore: response.data });
 			});
 
-		axios.get('api/data/barData').then((response) => {
-			this.setState({ barData: response.data });
+		axios.get('https://api.covid19india.org/v4/data.json').then((response) => {
+			const data = response.data;
+			const keys = Object.keys(data);
+			const arrayData = [];
+			keys.forEach(key =>{
+				arrayData.push({label:key,data:[data[key].total.confirmed,data[key].total.recovered,data[key].total.deceased]});
+			});
+			this.setState({ barData: arrayData });
 		});
 	}
 	static defaultProps = {
@@ -106,7 +111,7 @@ class Statistics extends Component {
 	allCountriesData() {
 		return this.state.tableData.map((x) => {
 			return (
-				<tr>
+				<tr key={x.country}>
 					<td>{x.country}</td>
 					<td>{x.cases}</td>
 					<td>{x.todayCases}</td>
@@ -137,7 +142,7 @@ class Statistics extends Component {
 			};
 			const options = { ...this.state.options };
 			return (
-				<div className='card-3'>
+				<div className='card-3' key={x.label}>
 					<div className='bar-border'>
 						<Bar data={data} options={options} width={700} height={300} />
 					</div>
@@ -177,7 +182,7 @@ class Statistics extends Component {
 						<label className='searchLabel'>Country : </label>
 						<input
 							type='text'
-							class='searchBox'
+							className='searchBox'
 							placeholder='Search Country'
 							value={this.state.searchValue}
 							onChange={this.onSearchChange}

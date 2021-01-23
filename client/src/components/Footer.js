@@ -9,13 +9,8 @@ class Footer extends React.Component {
 					<span role='img' aria-label='love emoji'>
 						❤️
 					</span>{' '}
-					By{' '}
-					<div class='logo'>
-						<img src={dsc_logo} alt='DSC logo' />
-					</div>
-				</p>
-				<p>
-					Developed By<strong> SIVA SANKAR & VASANTH</strong>
+					{'   '}
+					Developed By<strong> SIVA SANKAR</strong>
 				</p>
 			</footer>
 		);
