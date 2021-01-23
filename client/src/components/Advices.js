@@ -4,15 +4,14 @@ import axios from 'axios';
 class Advices extends React.Component {
 	state = { who: { askWho: [], beReady: [], protectYou: [], whileTravel: [] } };
 	componentDidMount() {
-		axios.get('/api/data/advices').then((response) => {
-			console.log(response.data);
+		axios.get('http://localhost:5000/api/data/advices').then((response) => {
 			this.setState({ ...response.data });
 		});
 	}
 	askWho() {
 		return this.state.who.askWho.map((x) => {
 			return (
-				<div className='card-3'>
+				<div className='card-3' key={x}>
 					<a href={x}>
 						<img src={x} alt='' />
 					</a>
@@ -24,7 +23,7 @@ class Advices extends React.Component {
 	beReady() {
 		return this.state.who.beReady.map((x) => {
 			return (
-				<div className='card-3'>
+				<div className='card-3' key={`${x}beready`}>
 					<a href={x}>
 						<img src={x} alt='' />
 					</a>
@@ -57,13 +56,12 @@ class Advices extends React.Component {
 	}
 
 	render() {
-		console.log(this.state);
 		return (
 			<div className='fx'>
 				<h3 className='fx-head'>
 					Ask WHO <small>Click on images to view in full screen</small>
 				</h3>
-				<div class='fx-container'>{this.askWho()}</div>
+				<div className='fx-container'>{this.askWho()}</div>
 
 				<h3 className='fx-head'>Be Ready for coronavirus</h3>
 				<div className='fx-container'>{this.beReady()}</div>
