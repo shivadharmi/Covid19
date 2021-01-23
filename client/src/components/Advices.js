@@ -4,7 +4,7 @@ import axios from 'axios';
 class Advices extends React.Component {
 	state = { who: { askWho: [], beReady: [], protectYou: [], whileTravel: [] } };
 	componentDidMount() {
-		axios.get('http://localhost:5000/api/data/advices').then((response) => {
+		axios.get('https://covid19help.herokuapp.com/api/data/advices').then((response) => {
 			this.setState({ ...response.data });
 		});
 	}

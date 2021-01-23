@@ -4,7 +4,7 @@ import axios from 'axios';
 class Myths extends React.Component {
 	state = { data: [] };
 	componentDidMount() {
-		axios.get('/api/data/myths').then(response => {
+		axios.get('https://covid19help.herokuapp.com/api/data/myths').then(response => {
 			this.setState({ data: [...response.data] });
 		});
 	}

@@ -14,7 +14,7 @@ const videos = [
 	},
 	{
 		title: 'LIVE TV 🔴',
-		src: 'https://youtube.com/embed/l_NIgnb9J2g',
+		src: 'https://www.youtube.com/embed/AFNUeUed8Ro',
 	},
 ];
 
