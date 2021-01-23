@@ -25,7 +25,6 @@ const renderVid = () => {
 				<h3 className='fx-head'>{x.title}</h3>
 				<div>
 					<div className='bar-border'>
-						>
 						<iframe
 							title={x.title}
 							src={x.src}
